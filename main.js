@@ -145,13 +145,15 @@ clearBtn.onclick = clear;
 
 
 
-const numberClear = document.getElementById("numberClear");
-function FuncClearNumber(params) {
-	if (document.getElementById("areaClear").value == products.color) {
-		delete products[document.getElementById("areaClear").value];
-	};
+function FuncClearNumber() {
+	const colorToDelete = document.getElementById("areaClear").value;
+	const indexToDelete = products.findIndex(product => product.color === colorToDelete);
+	if (indexToDelete !== -1) {
+		products.splice(indexToDelete, 1);
+	}
 	Products();
 };
+const numberClear = document.getElementById("numberClear");
 numberClear.onclick = FuncClearNumber;
 
 
