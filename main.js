@@ -154,7 +154,7 @@ clearBtn.onclick = clearLastProduct;
 
 const numberClear = document.getElementById("numberClear");
 function FuncClearNumber() {
-  const deleteValue = document.getElementById("areaClear").value.trim();
+  const deleteValue = document.getElementById("areaClear").value;
   const updatedProducts = products.filter(product => product.color !== deleteValue);
   if (updatedProducts.length !== products.length) {
     products = updatedProducts;
