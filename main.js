@@ -146,10 +146,10 @@ clearBtn.onclick = clear;
 
 
 const numberClear = document.getElementById("numberClear");
-const colorToDelete = document.getElementById("areaClear").value;
+const Delete = document.getElementById("areaClear").value;
 function FuncClearNumber(params) {
-	if (colorToDelete === products.color) {
-		delete products[colorToDelete];
+	if (Delete === products.color) {
+		delete products[Delete];
 		Products();
 	};
 };
