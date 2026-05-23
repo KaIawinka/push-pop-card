@@ -106,6 +106,8 @@ let products = [
   },
 ];
 
+
+
 function Products() {
   const block = document.querySelector("#block");
   if (!block) return;
@@ -123,27 +125,19 @@ function Products() {
   });
 };
 
+
+
 function addProduct() {
-  const titleInput = document.getElementById("title");
-  const priceInput = document.getElementById("price");
-  const weightInput = document.getElementById("weight");
-  const colorInput = document.getElementById("color");
-  const imageInput = document.getElementById("image");
   const newProduct = {
-    title: titleInput.value,
-    price: priceInput.value,
-    weight: weightInput.value,
-    color: colorInput.value,
-    image: imageInput.value,
+    title: document.getElementById("title").value,
+    price: document.getElementById("price").value,
+    weight: document.getElementById("weight").value,
+    color: document.getElementById("color").value,
+    image: document.getElementById("image").value,
   };
   products.push(newProduct);
   Products();
-  titleInput.value = "";
-  priceInput.value = "";
-  weightInput.value = "";
-  colorInput.value = "";
-  imageInput.value = "";
-}
+};
 const add = document.getElementById("add");
 add.onclick = addProduct;
 
