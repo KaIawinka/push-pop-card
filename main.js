@@ -147,7 +147,9 @@ clearBtn.onclick = clear;
 
 const numberClear = document.getElementById("numberClear");
 function FuncClearNumber(params) {
-	delete products[document.getElementById("areaClear").value];
+	if (document.getElementById("areaClear").value == products.color) {
+		delete products[document.getElementById("areaClear").value];
+	};
 	Products();
 };
 numberClear.onclick = FuncClearNumber;
