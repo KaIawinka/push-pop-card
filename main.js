@@ -105,73 +105,70 @@ let products = [
     image: "https://txmg.org/hendersonmg/files/2022/04/Pear-Ayers.jpg",
   },
 ];
-const block = document.querySelector("#block");
-products.forEach((product) => {
-  block.innerHTML += `
-    <div class="prod2">
-      <img src="${product.image}" alt="${product.title}">
-      <h2>${product.title}</h2>
-      <span>Цена: ${product.price}</span>
-      <span>Вес: ${product.weight}</span>
-      <span>Номер: ${product.color}</span>
-    </div>
-  `;
-});
 
-
+function Products() {
+  const block = document.querySelector("#block");
+  if (!block) return;
+  block.innerHTML = "";
+  products.forEach((product) => {
+    block.innerHTML += `
+      <div class="prod2">
+        <img src="${product.image}" alt="${product.title}">
+        <h2>${product.title}</h2>
+        <span>Цена: ${product.price}</span>
+        <span>Вес: ${product.weight}</span>
+        <span>Номер: ${product.color}</span>
+      </div>
+    `;
+  });
+}
 
 function addProduct() {
-	const newProduct = {
-		title: document.getElementById("title").value,
-		price: document.getElementById("price").value,
-		weight: document.getElementById("weight").value,
-		color: document.getElementById("color").value,
-		image: document.getElementById("image").value,
-	};
-	products.push(newProduct);
-	Products();
-};
+  const titleInput = document.getElementById("title");
+  const priceInput = document.getElementById("price");
+  const weightInput = document.getElementById("weight");
+  const colorInput = document.getElementById("color");
+  const imageInput = document.getElementById("image");
+
+  const newProduct = {
+    title: titleInput.value,
+    price: priceInput.value,
+    weight: weightInput.value,
+    color: colorInput.value,
+    image: imageInput.value,
+  };
+
+  products.push(newProduct);
+  Products();
+
+  titleInput.value = "";
+  priceInput.value = "";
+  weightInput.value = "";
+  colorInput.value = "";
+  imageInput.value = "";
+}
 const add = document.getElementById("add");
 add.onclick = addProduct;
 
-
-
-function clear() {
-	products.pop();
-	Products();
-};
+function clearLastProduct() {
+  products.pop();
+  Products();
+}
 const clearBtn = document.getElementById("clear");
-clearBtn.onclick = clear;
-
-
+clearBtn.onclick = clearLastProduct;
 
 const numberClear = document.getElementById("numberClear");
 function FuncClearNumber() {
   const deleteValue = document.getElementById("areaClear").value.trim();
-	const updatedProducts = products.filter(product => product.color !== deleteValue);
-	if (updatedProducts.length !== products.length) {
+  const updatedProducts = products.filter(product => product.color !== deleteValue);
+  if (updatedProducts.length !== products.length) {
     products = updatedProducts;
     Products();
+    document.getElementById("areaClear").value = "";
   } else {
     alert("Товар с таким номером не найден!");
-  };
-};
+  }
+}
 numberClear.onclick = FuncClearNumber;
 
-
-
-function Products() {
-	const block = document.querySelector("#block");
-	block.innerHTML = "";
-	products.forEach((product) => {
-		block.innerHTML += `
-			<div class="prod2">
-				<img src="${product.image}" alt="${product.title}">
-				<h2>${product.title}</h2>
-				<span>Цена: ${product.price}</span>
-				<span>Вес: ${product.weight}</span>
-				<span>Номер: ${product.color}</span>
-			</div>
-		`;
-	});
-};
+Products();
