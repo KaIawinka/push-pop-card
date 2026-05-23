@@ -119,7 +119,7 @@ function Products() {
         <h2>${product.title}</h2>
         <span>Цена: ${product.price}</span>
         <span>Вес: ${product.weight}</span>
-        <span>Номер: ${product.color}</span>
+        <span>Индекс: ${product.color}</span>
       </div>
     `;
   });
