@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Продуктовый Магазин</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">Продуктовый магазин</div>
+    <nav class="nav">
+      <a href="#">Главная</a>
+      <a href="#">Каталог</a>
+      <a href="#">Контакты</a>
+    </nav>
+  </header>
+
+  <main class="main">
+		<input type="text" id="title" placeholder="Название товара" value="">
+		<input type="text" id="price" placeholder="Цена товара" value="">
+		<input type="text" id="weight" placeholder="Вес товара" value="">
+		<input type="text" id="color" placeholder="Цвет товара" value="">
+		<input type="text" id="image" placeholder="URL изображения товара" value="">
+		<button id="add">Добавить товар</button>
+		<button id="clear">Удалить последний товар</button>
+    <h1>Наши Товары</h1>
+    <div id="block" class="prod1"></div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Продуктовый магазин. Все права защищены.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
