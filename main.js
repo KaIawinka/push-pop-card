@@ -145,6 +145,15 @@ clearBtn.onclick = clear;
 
 
 
+const numberClear = document.getElementById("numberClear");
+function FuncClearNumber(params) {
+	delete products[document.getElementById("areaClear").value];
+	Products();
+};
+numberClear.onclick = FuncClearNumber;
+
+
+
 function Products() {
 	const block = document.querySelector("#block");
 	block.innerHTML = "";
