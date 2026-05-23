@@ -121,7 +121,7 @@ function Products() {
       </div>
     `;
   });
-}
+};
 
 function addProduct() {
   const titleInput = document.getElementById("title");
@@ -129,7 +129,6 @@ function addProduct() {
   const weightInput = document.getElementById("weight");
   const colorInput = document.getElementById("color");
   const imageInput = document.getElementById("image");
-
   const newProduct = {
     title: titleInput.value,
     price: priceInput.value,
@@ -137,10 +136,8 @@ function addProduct() {
     color: colorInput.value,
     image: imageInput.value,
   };
-
   products.push(newProduct);
   Products();
-
   titleInput.value = "";
   priceInput.value = "";
   weightInput.value = "";
@@ -150,12 +147,16 @@ function addProduct() {
 const add = document.getElementById("add");
 add.onclick = addProduct;
 
+
+
 function clearLastProduct() {
   products.pop();
   Products();
-}
+};
 const clearBtn = document.getElementById("clear");
 clearBtn.onclick = clearLastProduct;
+
+
 
 const numberClear = document.getElementById("numberClear");
 function FuncClearNumber() {
@@ -167,8 +168,7 @@ function FuncClearNumber() {
     document.getElementById("areaClear").value = "";
   } else {
     alert("Товар с таким номером не найден!");
-  }
-}
+  };
+};
 numberClear.onclick = FuncClearNumber;
-
 Products();
