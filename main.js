@@ -146,12 +146,15 @@ clearBtn.onclick = clear;
 
 
 const numberClear = document.getElementById("numberClear");
-const Delete = document.getElementById("areaClear").value;
-function FuncClearNumber(params) {
-	if (Delete == products.color) {
-		delete products[Delete];
-		Products();
-	};
+function FuncClearNumber() {
+  const deleteValue = document.getElementById("areaClear").value.trim();
+	const updatedProducts = products.filter(product => product.color !== deleteValue);
+	if (updatedProducts.length !== products.length) {
+    products = updatedProducts;
+    Products();
+  } else {
+    alert("Товар с таким номером не найден!");
+  };
 };
 numberClear.onclick = FuncClearNumber;
 
